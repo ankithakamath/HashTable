@@ -34,7 +34,7 @@ package com.yml.hash;
 			if (myMapNode == null)
 			{ 
 				myMapNode = new MyMapNode<>(key,value); 
-				myLinkedList.append(myMapNode);
+				myLinkedList.add(myMapNode);
 			} else {
 				myMapNode.setValue(value);
 			}

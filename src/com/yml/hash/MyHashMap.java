@@ -12,7 +12,7 @@ public class MyHashMap<K,V > {
 		MyMapNode<K,V> myMapNode = (MyMapNode<K,V>) this.myLinkedList.search(key);
 		if(myMapNode == null) {
 			myMapNode = new MyMapNode<>(key,value);
-			this.myLinkedList.append(myMapNode);
+			this.myLinkedList.add(myMapNode);
 		}else {
 			myMapNode.setValue(value);
 		}
@@ -21,6 +21,22 @@ public class MyHashMap<K,V > {
 	public V get(K key) {
 		MyMapNode<K,V> myMapNode = (MyMapNode<K,V>) this.myLinkedList.search(key);	
 		return (myMapNode == null)?null : myMapNode.getValue();
+	}
+	public void remove(K key,V value)
+	{
+		System.out.println(key);
+		MyMapNode<K,V> myMapNode=(MyMapNode<K,V>)this.myLinkedList.search(key);
+		System.out.println(myMapNode);
+		if(myMapNode!=null)
+		{
+			myMapNode=new MyMapNode<>(key,value);
+			this.myLinkedList.delete();
+			System.out.println("Deleted successfully");
+		}
+		else
+		{
+			System.out.println("Word not found.");
+		}
 	}
 	
 	public String toString() {

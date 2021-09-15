@@ -9,7 +9,7 @@ public class MyLinkedList<K> {
 		this.tail = null;	
 	}
 		
-	public void append(INode<K> newNode) {
+	public void add(INode<K> newNode) {
 		if(this.head == null) {
 			this.head = newNode;
 		}
@@ -33,7 +33,12 @@ public class MyLinkedList<K> {
 		}
 		return null;
 	}
-	
+	public INode<K> delete()
+	{
+		INode<K> tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
+	}
 	
 	public String printMyNodes() {
 		return "My Nodes: "+head;
